@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
 						<p class="alert-text">${description}</p>
 						<p class="alert-posted">Posted on ${date}</p>
 						<p class="is-style-utkwds-cta-link">
-						<a class="ut-alert-link" href="https://safety.utk.edu/status/">
-							See campus status
-						</a>
+							<a class="ut-alert-link" href="https://safety.utk.edu/status/">
+								See campus status
+							</a>
 						</p>
 					</div>
 				</div>

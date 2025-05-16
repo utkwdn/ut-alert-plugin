@@ -31,10 +31,11 @@ p.alert-text {
 p.alert-posted {
 	font-size: 16px;
 	font-weight: 500;
-	margin: 30px 0;
+	margin: 30px 0 20px;
 }
 
 .ut-alert-link {
+	display: inline-block;
 	background: #fff;
 	padding: 15px 50px 15px 15px;
 	border-radius: 10px;

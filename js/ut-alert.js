@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			<div class="ut-alert" role="alert">
 				<div class="inner-alert">
 					<div class="icon-container">
-						<svg width="65" height="65" viewBox="0 0 126 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<svg viewBox="0 0 126 125" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<!-- Triangular white background -->
 							<polygon points="65,9 9,120 120,120" fill="#fff"></polygon>
 
@@ -35,9 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		const header = document.querySelector('.site-header');
 
-		if (header) {
-			header.appendChild(alertDiv);
-		}
+		header.prepend(alertDiv);
 	}
 
 	// Display alert with testing message if testing mode is enabled in settings

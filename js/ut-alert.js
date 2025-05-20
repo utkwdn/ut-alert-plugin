@@ -34,8 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			</div>`;
 
 		const header = document.querySelector('.site-header');
-
-		header.prepend(alertDiv);
+		
+		if (header) {
+			header.prepend(alertDiv);
+		}
 	}
 
 	// Display alert with testing message if testing mode is enabled in settings

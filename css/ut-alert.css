@@ -49,7 +49,7 @@ p.alert-posted {
 /* Mobile styles */
 @media only screen and (min-width: 600px) {
 	.ut-alert {
-		padding: 40px;
+		padding: 40px 40px 30px;
 	}
 
 	.inner-alert {

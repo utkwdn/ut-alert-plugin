@@ -3,7 +3,7 @@
  * Plugin Name:       UT Alert Banner
  * Description:       Displays an alert banner if the RSS feed contains active alerts
  * Version:           1.0
- * Author:            UT OCM
+ * Author:            The University of Tennessee, Knoxville
  * License:           GPL-2.0-or-later
  * Text Domain:       ut_alert_banner
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html

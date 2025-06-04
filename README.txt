@@ -3,7 +3,7 @@
 Plugin Name:  UT Alert Banner
 Description:  Displays an alert banner if the RSS feed contains active alerts
 Plugin URI:   https://www.utk.edu
-Author:       UT OCM
+Author:       The University of Tennessee, Knoxville
 Version:      1.0
 Text Domain:  ut_alert_banner
 Domain Path:  /languages

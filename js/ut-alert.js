@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener( 'DOMContentLoaded', function () {
 	// Check if testing mode is enabled in settings
 	const testingMode =
 		typeof utAlertSettings !== 'undefined' && utAlertSettings.testingMode;
 
 	// Append alert banner HTMl to .site-header
-	function displayAlert(description, date) {
-		const alertDiv = document.createElement('div');
+	function displayAlert( description, date ) {
+		const alertDiv = document.createElement( 'div' );
 		alertDiv.innerHTML = `
 			<div class="ut-alert" role="alert">
 				<div class="inner-alert">
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
 					</div>
 					<div class="content-container">
 						<h3 class="alert-heading">UT Emergency Alert</h3>
-						<p class="alert-text">${description}</p>
-						<p class="alert-posted">Posted on ${date}</p>
+						<p class="alert-text">${ description }</p>
+						<p class="alert-posted">Posted on ${ date }</p>
 						<p class="is-style-utkwds-cta-link">
 							<a class="ut-alert-link" href="https://safety.utk.edu/status/">
 								See campus status
@@ -33,19 +33,19 @@ document.addEventListener('DOMContentLoaded', function () {
 				</div>
 			</div>`;
 
-		const header = document.querySelector('.site-header');
-		
-		if (header) {
-			header.prepend(alertDiv);
+		const header = document.querySelector( '.site-header' );
+
+		if ( header ) {
+			header.prepend( alertDiv );
 		}
 	}
 
 	// Display alert with testing message if testing mode is enabled in settings
-	if (testingMode) {
+	if ( testingMode ) {
 		const today = new Date();
 		const formattedToday = `${
 			today.getMonth() + 1
-		}/${today.getDate()}/${today.getFullYear()}`;
+		}/${ today.getDate() }/${ today.getFullYear() }`;
 
 		displayAlert(
 			'This is a test alert for the UT Emergency Alert banner system. No action is required at this time. This message is part of a routine test to ensure proper functionality in the event of an actual emergency.',
@@ -58,44 +58,46 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Fetch RSS feed and display alert if no "All Clear" message
 	const url = 'https://www.getrave.com/rss/utk/channel1';
 
-	fetch(url)
-		.then((response) => response.text())
-		.then((result) => {
+	fetch( url )
+		.then( ( response ) => response.text() )
+		.then( ( result ) => {
 			const parser = new DOMParser();
-			const xmlDoc = parser.parseFromString(result, 'text/xml');
-			const items = xmlDoc.getElementsByTagName('item');
+			const xmlDoc = parser.parseFromString( result, 'text/xml' );
+			const items = xmlDoc.getElementsByTagName( 'item' );
 
 			// Exit if there are no items
-			if (items.length === 0) {
+			if ( items.length === 0 ) {
 				return;
 			}
 
 			// Check contents of last item
-			const lastItem = items[items.length - 1];
+			const lastItem = items[ items.length - 1 ];
 
 			const title =
-				lastItem.getElementsByTagName('title')[0]?.textContent || '';
-			const description =
-				lastItem.getElementsByTagName('description')[0]?.textContent ||
+				lastItem.getElementsByTagName( 'title' )[ 0 ]?.textContent ||
 				'';
+			const description =
+				lastItem.getElementsByTagName( 'description' )[ 0 ]
+					?.textContent || '';
 			const alertDate =
-				lastItem.getElementsByTagName('dc:date')[0]?.textContent || '';
+				lastItem.getElementsByTagName( 'dc:date' )[ 0 ]?.textContent ||
+				'';
 
 			// Exit if title is blank or includes "RSS All Clear"
-			if (title === '' || title.includes('RSS All Clear')) {
+			if ( title === '' || title.includes( 'RSS All Clear' ) ) {
 				return;
 			}
 
 			// Format date 'm/d/yyyy'
-			const date = new Date(alertDate);
+			const date = new Date( alertDate );
 			const formattedDate = `${
 				date.getMonth() + 1
-			}/${date.getDate()}/${date.getFullYear()}`;
-			
-			displayAlert(description, formattedDate);
-		})
+			}/${ date.getDate() }/${ date.getFullYear() }`;
 
-		.catch((error) => {
-			console.error('UT alert fetch error:', error);
-		});
-});
+			displayAlert( description, formattedDate );
+		} )
+
+		.catch( ( error ) => {
+			console.error( 'UT alert fetch error:', error );
+		} );
+} );

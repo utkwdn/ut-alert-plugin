@@ -1,10 +1,10 @@
 {
-  	"name": "ut-alert-plugin",
-  	"version": "1.0.0",
+	"name": "ut-alert-plugin",
+	"version": "1.0.0",
 	"description": "Displays an alert banner if the RSS feed contains active alerts",
 	"author": "The University of Tennessee, Knoxville",
 	"license": "GPL-2.0-or-later",
-	"homepage": "https://www.utk.edu",
+	"homepage": "https://github.com/utkwdn/ut-alert-plugin",
 	"devDependencies": {
 		"@wordpress/prettier-config": "^4.22.0",
 		"prettier": "npm:wp-prettier@^3.0.3"
